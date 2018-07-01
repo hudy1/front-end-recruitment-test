@@ -1,0 +1,98 @@
+$headingColor: #000000;
+
+.form {
+    font-size: 16px;
+    counter-reset: checkout;
+}
+
+.form__fieldset {
+    position: relative;
+    &::before {
+        font-size: 0.85em;
+        counter-increment: checkout;
+        content: counter(checkout);
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-color: $headingColor;
+        color: #ffffff;
+        position: absolute;
+        left: -30px;
+        top: 0;
+        text-align: center;
+        line-height: 20px;
+        border-radius: 50%;
+        font-weight: 700;
+    }
+}
+
+.form__legend {
+    color: $headingColor;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+
+.form__input,
+.form__select {
+    display: block;
+    width: 100%;
+
+    &:checked + .form__label--arrow {
+    }  
+}
+
+.form__box {
+    position: relative; 
+}
+
+@mixin inputStyle {
+    box-sizing: border-box;
+    background-color: #ffffff;
+    height: 50px;
+    box-shadow: 0px 2px 2px rgba(0,0,0,0.15);
+    border: none;
+    width: 100%;
+    display: block;
+    padding: 25px 10px 10px;
+    border-radius: 3px;
+}
+
+.form__input {
+    @include inputStyle;
+}
+ 
+.form__label,
+.form__label--arrow  {
+    pointer-events: none;
+    display: block;
+    font-size: 0.7em;
+    font-weight: 700; 
+    left: 10px;
+    right: 10px;
+    top: 5px;
+    position: absolute;
+}
+
+.form__label--arrow {
+    &::before {
+        pointer-events: none;
+        content: '⌄';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        margin-bottom: -10px;
+    }
+}
+
+.form__select {
+   @include inputStyle;
+   -webkit-appearance: none; 
+   -moz-appearance: none;
+   border: none;
+
+   &::-ms-expand {
+       display: none;
+   }
+}
+

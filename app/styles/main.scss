@@ -19,6 +19,8 @@ Note: any .css or .scss files included in the 'styles' directory
 will be correctly compiled during `gulp serve` and `gulp`
  */
 
+@import '_custom.scss';
+
 html, body {
   font-family: 'Roboto', 'Helvetica', sans-serif;
   margin: 0;
@@ -180,9 +182,9 @@ html, body {
 .mdl-demo .mdl-card .mdl-card__supporting-text > h3:first-child {
   margin-bottom: 24px;
 }
-.mdl-demo .mdl-layout__tab-panel:not(#overview) {
-  background-color: white;
-}
+// .mdl-demo .mdl-layout__tab-panel:not(#overview) {
+//   background-color: white;
+// }
 .mdl-demo #features section {
   margin-bottom: 72px;
 }
