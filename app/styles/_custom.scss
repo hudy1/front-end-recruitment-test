@@ -1,12 +1,25 @@
-$headingColor: #000000;
+$dashedBorder: 1px dashed #ccc;
+$textColor: #000000;
 
-.form {
+.formWrapper {
+    margin-bottom: 40px;
+    color: $textColor;
+}
+
+.form {  
+    width: 100%;
     font-size: 16px;
-    counter-reset: checkout;
+    counter-reset: checkout; 
+
+    .mdl-grid {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
 }
 
 .form__fieldset {
     position: relative;
+    margin-bottom: 30px;
     &::before {
         font-size: 0.85em;
         counter-increment: checkout;
@@ -14,10 +27,10 @@ $headingColor: #000000;
         display: block;
         width: 20px;
         height: 20px;
-        background-color: $headingColor;
+        background-color: $textColor;
         color: #ffffff;
         position: absolute;
-        left: -30px;
+        left: -15px;
         top: 0;
         text-align: center;
         line-height: 20px;
@@ -27,8 +40,10 @@ $headingColor: #000000;
 }
 
 .form__legend {
-    color: $headingColor;
-    font-weight: 700;
+    margin-left: 15px;
+    font-size: 0.8em;
+    color: $textColor; 
+    font-weight: 800;
     text-transform: uppercase;
 }
 
@@ -37,6 +52,7 @@ $headingColor: #000000;
 .form__select {
     display: block;
     width: 100%;
+    font-size: 0.95em;  
 
     &:checked + .form__label--arrow {
     }  
@@ -46,16 +62,20 @@ $headingColor: #000000;
     position: relative; 
 }
 
-@mixin inputStyle {
+@mixin boxStyle {
     box-sizing: border-box;
     background-color: #ffffff;
-    height: 50px;
     box-shadow: 0px 2px 2px rgba(0,0,0,0.15);
     border: none;
     width: 100%;
+    border-radius: 5px;
+}
+
+@mixin inputStyle {
+    @include boxStyle;
     display: block;
     padding: 25px 10px 10px;
-    border-radius: 3px;
+    height: 50px;
 }
 
 .form__input {
@@ -85,14 +105,80 @@ $headingColor: #000000;
     }
 }
 
-.form__select {
+.form__select { 
    @include inputStyle;
    -webkit-appearance: none; 
    -moz-appearance: none;
    border: none;
-
+ 
    &::-ms-expand {
        display: none;
    }
 }
 
+.form__submit {
+    @include inputStyle;
+    padding: 0;
+    background-color: #6bd400;
+    color: #ffffff;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.orderCard {
+    margin-top: 32px;
+    @include boxStyle;
+    padding: 5px;
+    font-size: 0.9em;
+}
+
+.orderCard__table {
+    table-layout: fixed;
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px 10px 30px;
+    border: $dashedBorder;
+}
+
+.orderCard__th {
+    text-align: left;
+    font-weight: normal;
+}
+
+.orderCard__td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: right;
+}
+
+.orderCard__th--tfoot,
+.orderCard__td--tfoot {
+    font-weight: 700;
+    vertical-align: top;
+}
+
+.orderCard__th--thead {
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: 800;
+}
+ 
+.orderCard__td--tfoot {
+    font-size: 1.8em; 
+}
+
+.orderCard__tfoot,
+.orderCard__tbody {
+    border-top: $dashedBorder; 
+    border-collapse: separate;
+    border-spacing: 4px;
+}
+
+.orderCard__sum {
+    width: 100%;
+    border-top: $dashedBorder;
+    border-bottom: $dashedBorder;
+    padding: 5px 0; 
+    margin: 12px 0 10px;
+}
