@@ -19,8 +19,6 @@ Note: any .css or .scss files included in the 'styles' directory
 will be correctly compiled during `gulp serve` and `gulp`
  */
 
-@import '_custom.scss';
-
 html, body {
   font-family: 'Roboto', 'Helvetica', sans-serif;
   margin: 0;
@@ -213,3 +211,8 @@ html, body {
 .mdl-demo .mdl-menu__container {
   z-index: 99;
 }
+
+@import '_helpers.scss';
+@import '_fontello.scss';
+@import '_form.scss';
+@import '_card.scss';

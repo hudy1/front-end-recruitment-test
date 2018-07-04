@@ -1,0 +1,31 @@
+$dashedBorder: 1px dashed #ccc;
+$textColor: #000000;
+$submitColor: #6bd400;
+$invalidColor: #ad4639;
+
+@mixin boxStyle {
+    box-sizing: border-box;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 2px rgba(0,0,0,0.15);
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+}
+
+@mixin inputStyle {
+    @include boxStyle;
+    display: block;
+    padding: 25px 10px 10px;
+    height: 50px;
+}
+
+@mixin fontelloContent($icon) {
+    content: $icon;
+    font-family: fontello;
+    position: absolute;
+    pointer-events: none;
+    right: 15px;
+    opacity: 0.3;  
+    font-size: 1.3em;
+    top: 0.7em;
+}

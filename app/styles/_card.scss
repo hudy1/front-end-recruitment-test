@@ -1,0 +1,56 @@
+.orderCard {
+    margin-top: 32px;
+    @include boxStyle;
+    padding: 5px;
+    font-size: 0.9em;
+}
+
+.orderCard__table {
+    table-layout: fixed;
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px 10px 30px;
+    border: $dashedBorder;
+}
+
+.orderCard__th {
+    text-align: left;
+    font-weight: normal;
+}
+
+.orderCard__td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: right;
+}
+
+.orderCard__th--tfoot,
+.orderCard__td--tfoot {
+    font-weight: 700;
+    vertical-align: top;
+}
+
+.orderCard__th--thead {
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: 800;
+}
+ 
+.orderCard__td--tfoot {
+    font-size: 1.8em; 
+}
+
+.orderCard__tfoot,
+.orderCard__tbody {
+    border-top: $dashedBorder; 
+    border-collapse: separate;
+    border-spacing: 4px;
+}
+
+.orderCard__sum {
+    width: 100%;
+    border-top: $dashedBorder;
+    border-bottom: $dashedBorder;
+    padding: 5px 0; 
+    margin: 12px 0 10px;
+}
