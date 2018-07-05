@@ -1,5 +1,9 @@
+.order {
+    width: 33%;
+}
+
 .orderCard {
-    margin-top: 32px;
+    margin-top: 35px;
     @include boxStyle;
     padding: 5px;
     font-size: 0.9em;
@@ -9,8 +13,16 @@
     table-layout: fixed;
     border-radius: 5px;
     width: 100%;
-    padding: 10px 10px 30px;
+    font-size: 0.85em;
+    padding: 8px 10px 25px;
     border: $dashedBorder;
+}
+
+.orderCard__th,
+.orderCard__td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    vertical-align: top;
 }
 
 .orderCard__th {
@@ -19,8 +31,6 @@
 }
 
 .orderCard__td {
-    padding-top: 5px;
-    padding-bottom: 5px;
     text-align: right;
 }
 
@@ -31,6 +41,7 @@
 }
 
 .orderCard__th--thead {
+    padding-bottom: 10px;
     text-transform: uppercase;
     font-size: 0.9em;
     font-weight: 800;
@@ -43,14 +54,12 @@
 .orderCard__tfoot,
 .orderCard__tbody {
     border-top: $dashedBorder; 
-    border-collapse: separate;
-    border-spacing: 4px;
 }
 
 .orderCard__sum {
     width: 100%;
     border-top: $dashedBorder;
     border-bottom: $dashedBorder;
-    padding: 5px 0; 
+    padding: 5px 0 10px; 
     margin: 12px 0 10px;
 }

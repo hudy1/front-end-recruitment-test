@@ -1,22 +1,31 @@
+html {
+    background-color: #f2f2f2;
+}
+
 .formWrapper {
     margin-bottom: 40px;
     color: $textColor;
+    max-width: 850px;
+    width: 100%;
+    margin: 40px; 
+}
+
+.formWrapper__col {
+    display: inline-block;
+    vertical-align: top;
 }
 
 .form {  
-    width: 100%;
+    width: 66%; 
     font-size: 16px;
     counter-reset: checkout; 
-
-    .mdl-grid {
-        padding-top: 5px;
-        padding-bottom: 5px;
-    }
 }
 
 .form__fieldset {
+    border: none;
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    padding: $fieldsetPadding;
     &::before {
         font-size: 0.85em;
         counter-increment: checkout;
@@ -37,7 +46,7 @@
 }
 
 .form__legend {
-    margin: 0 0 0 15px;
+    margin-bottom: 10px; 
     line-height: 2em;
     font-size: 0.8em;
     color: $textColor; 
@@ -45,28 +54,38 @@
     text-transform: uppercase;
 }
 
-
 .form__input,
 .form__select {
     display: block;
     width: 100%;
-    font-size: 0.95em;  
+    font-size: 1em;  
 
     &:focus + .form__label--arrow {
         &::before {
             content: '\e803';
         }
     }
+}
 
-    &:invalid {
-        outline-color: $invalidColor;
-    }
+.form__row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form__row--submit {
+    padding: $fieldsetPadding;
+    flex-direction: column;   
 }
 
 .form__box {
+    flex: 1;
     position: relative; 
 }
 
+.form__box--6 {
+    max-width: calc(50% - 5px);
+}
 
 .form__input {
     @include inputStyle;
@@ -76,11 +95,11 @@
 .form__label--arrow  {
     pointer-events: none;
     display: block;
-    font-size: 0.7em;
+    font-size: 0.75em;
     font-weight: 700; 
     left: 10px;
     right: 10px;
-    top: 5px;
+    top: 7px;
     position: absolute;
 }
 
@@ -98,11 +117,11 @@
 }
 
 .form__select { 
-   @include inputStyle;
+   @include inputStyle(20px 0 0 10px);
    -webkit-appearance: none; 
    -moz-appearance: none;
    border: none;
- 
+  
    &::-ms-expand { 
        display: none;
    }
@@ -145,7 +164,6 @@
     }
 }
 
-
 .form__message {
     display: none;
     font-size: 2em;
@@ -158,7 +176,7 @@
 .form__message--valid,
 .form__message--invalid {
     display: block; 
-}
+} 
 
 .form__message--valid { 
     background-color: #8fc143;
@@ -166,4 +184,8 @@
 
 .form__message--invalid {
     background-color: $invalidColor;
+}
+
+.icon-lock-filled {
+    margin-left: 0.7em;
 }

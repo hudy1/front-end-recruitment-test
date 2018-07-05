@@ -2,6 +2,7 @@ $dashedBorder: 1px dashed #ccc;
 $textColor: #000000;
 $submitColor: #6bd400;
 $invalidColor: #ad4639;
+$fieldsetPadding: 0 8px 0 15px;
 
 @mixin boxStyle {
     box-sizing: border-box;
@@ -12,16 +13,16 @@ $invalidColor: #ad4639;
     border-radius: 5px;
 }
 
-@mixin inputStyle {
+@mixin inputStyle($padding: 25px 10px 10px) {
     @include boxStyle;
     display: block;
-    padding: 25px 10px 10px;
+    padding: $padding;
     height: 50px;
 }
 
 @mixin fontelloContent($icon) {
     content: $icon;
-    font-family: fontello;
+    font-family: fontello; 
     position: absolute;
     pointer-events: none;
     right: 15px;

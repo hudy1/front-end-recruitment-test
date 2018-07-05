@@ -73,5 +73,11 @@
     });
   }
 
-  // Your custom JavaScript goes here
+  // Your custom JavaScript goes here 
+  const imgToClone = document.querySelector('img[alt="Bacon"]');
+  const imgsContainer = imgToClone.parentNode;
+
+  document.querySelector('button').addEventListener('click', () => {
+    imgsContainer.appendChild(imgToClone.cloneNode());
+  });
 })();

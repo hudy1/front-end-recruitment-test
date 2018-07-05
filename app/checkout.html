@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Checkout</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <div class="formWrapper">
+        <!-- form -->
+        <form class="form formWrapper__col">
+            <fieldset class="form__fieldset">
+                <legend  class="form__legend">Personal information</legend>
+                <div class="form__row">
+                    <div class="form__box form__box--6">
+                        <label for="name" class="form__label">First name</label>
+                        <input type="text" id="name" placeholder="Elon" class="form__input form_validate" required />
+                    </div>
+                    <div class="form__box form__box--6">
+                        <label for="surname" class="form__label">Last name</label>
+                        <input type="text" id="surname" placeholder="Musk" class="form__input form_validate" required />
+                    </div>
+                </div>
+                <div class="form__row">
+                    <div class="form__box">
+                        <label for="email" class="form__label">Email</label>
+                        <input type="email" id="email" placeholder="elon@spacex.com" class="form__input form_validate" required />
+                    </div>
+                </div>
+                <div class="form__row">
+                    <div class="form__box form__box--6">
+                        <select id="country" class="form__select form_validate" required>
+                            <option value="">Country</option>
+                            <option value="0">United States</option>
+                            <option value="1">Poland</option>
+                            <option value="2">Zimbabwe</option>
+                            <option value="3">North Korea</option>
+                            <option value="4">France</option>
+                        </select>
+                        <label for="country" class="form__label--arrow">Country</label>
+                    </div>
+                    <div class="form__box form__box--6">
+                        <label for="postal" class="form__label">Postal Code</label>
+                        <input type="text" id="postal" placeholder="10001" class="form__input form_validate" pattern="[0-9]{5}" required />
+                    </div>
+                </div>
+                <div class="form__row">
+                    <div class="form__box">
+                        <label for="tel" class="form__label">Phone Number</label>
+                        <input type="tel" id="tel" placeholder="(212) 692-93-92" class="form__input form_validate" pattern="\([0-9]{3}\) [0-9]{3}-[0-9]{2}-[0-9]{2}"
+                            required />
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="form__fieldset">
+                <legend class="form__legend">Payments details<span class="icon-lock-filled"></span></legend>
+                <div class="form__row">
+                    <div class="form__box form__box--card">
+                        <label for="credit" class="form__label">Credit Card Number</label>
+                        <input type="text" id="credit" placeholder="0000-0000-0000-0000" class="form__input form_validate" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"
+                            required />
+                    </div>
+                </div>
+                <div class="form__row">
+                    <div class="form__box form__box--6 form__box--code">
+                        <label for="code" class="form__label">Security code</label>
+                        <input type="password" id="code" placeholder="***" class="form__input form_validate" pattern="[0-9]{3}" required />
+                    </div>
+                    <div class="form__box form__box--6 form__box">
+                        <label for="expiration" class="form__label">Expiration date</label>
+                        <input type="text" id="expiration" placeholder="MM/YY" class="form__input form_validate" pattern="[0-1][0-9]\/[0-9][0-9]"
+                            required />
+                    </div>
+                </div>
+            </fieldset>
+            <div class="form__row form__row--submit">
+                <div class="form__message"></div>
+                <button type="submit" class="form__submit">Complete purchase</button>
+            </div>
+        </form>
+        <!-- / form -->
+        <!-- order card -->
+        <div class="order formWrapper__col">
+            <div class="orderCard">
+                <table class="orderCard__table">
+                    <thead class="orderCard__thead">
+                        <tr>
+                            <th colspan="2" class="orderCard__th orderCard__th--thead">Your order</th>
+                        </tr>
+                    </thead>
+                    <tbody class="orderCard__tbody">
+                        <tr>
+                            <th class="orderCard__th">Apple Watch Sport</th>
+                            <td class="orderCard__td">$ 580</td>
+                        </tr>
+                        <tr>
+                            <th class="orderCard__th">Modern Buckle</th>
+                            <td class="orderCard__td">$ 380</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table class="orderCard__sum">
+                                    <tr>
+                                        <th class="orderCard__th">Total purchases</th>
+                                        <td class="orderCard__td">$ 960.00</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderCard__th">Estimated tax</th>
+                                        <td class="orderCard__td">$ 0</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot class="orderCard__tfoot">
+                        <tr class="orderCard__sum">
+                            <th class="orderCard__th orderCard__th--tfoot">Total</th>
+                            <td class="orderCard__td orderCard__td--tfoot">$ 960</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <!-- /order card -->
+    </div>
+    <script src="scripts/custom.js"></script>
+</body>
+
+</html>
